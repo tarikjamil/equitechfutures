@@ -52,9 +52,16 @@ function getAlumnis() {
         h2.textContent = alumni.name;
 
         // For each restaurant, create an paragraph and set the text content to the restaurant's description
-        const p = card.getElementsByTagName("P")[0];
-        p.textContent = `${alumni.bio.substring(0, 240)}`; // Limit to 240 chars
+        const country = card.getElementsByClass("country-name")[0];
+        country.textContent = `${alumni.country.substring(0, 240)}`; // Limit to 240 chars
 
+        // For each restaurant, create an paragraph and set the text content to the restaurant's description
+        const position = card.getElementsByClass("position")[0];
+        position.textContent = `${alumni.position.substring(0, 240)}`; // Limit to 240 chars
+
+        // For each restaurant, create an paragraph and set the text content to the restaurant's description
+        const bio = card.getElementsByClass("bio")[0];
+        bio.textContent = `${alumni.bio.substring(0, 240)}`; // Limit to 240 chars
         // Place the card into the div "Cards-Container"
 
         cardContainer.appendChild(card);
