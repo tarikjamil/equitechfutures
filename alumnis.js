@@ -3,7 +3,7 @@ let xanoUrl = new URL("https://x8ki-letl-twmt.n7.xano.io/api:v0K9JRjG/");
 
 // Define a function (set of operations) to get restaurant information.
 // This will use the GET request on the URL endpoint
-function getRestaurants() {
+function getAlumnis() {
   // Create a request variable and assign a new XMLHttpRequest object to it.
   // XMLHttpRequest is the standard way you access an API in plain Javascript.
   let request = new XMLHttpRequest();
@@ -11,7 +11,7 @@ function getRestaurants() {
   // Define a function (set of operations) to get restaurant information.
   // Creates a variable that will take the URL from above and makes sure it displays as a string.
   // We then add the word 'restaurant" so the API endpoint becomes https://x715-fe9c-6426.n7.xano.io/api:Iw1iInWB/restaurant
-  let url = xanoUrl.toString();
+  let url = xanoUrl.toString() + "alumnis";
 
   // Remember the 'request' was defined above as the standard way to access an API in Javascript.
   // GET is the verb we're using to GET data from Xano
@@ -29,7 +29,7 @@ function getRestaurants() {
 
       // This is called a For Loop. This goes through each object being passed back from the Xano API and does something.
       // Specifically, it says "For every element in Data (response from API), call each individual item restaurant"
-      data.forEach((restaurant) => {
+      data.forEach((alumni) => {
         // For each restaurant, create a div called card and style with the "Sample Card" class
         const style = document.getElementById("samplestyle");
         // Copy the card and it's style
@@ -40,20 +40,20 @@ function getRestaurants() {
 
         // When a restuarant card is clicked, navigate to the item page by passing the restaurant id
         card.addEventListener("click", function () {
-          document.location.href = "/item?id=" + restaurant.id;
+          document.location.href = "/item?id=" + alumni.id;
         });
 
         // For each restaurant, Create an image and use the restaurant image coming from the API
         const img = card.getElementsByTagName("IMG")[0];
-        img.src = restaurant.image + "?tpl=big:box"; // using Xano's template engine to re-size the pictures down and make them a box
+        img.src = alumni.image.url + "?tpl=big:box"; // using Xano's template engine to re-size the pictures down and make them a box
 
         // For each restaurant, create an h3 and set the text content to the restaurant's title
         const h3 = card.getElementsByTagName("H3")[0];
-        h3.textContent = restaurant.Name;
+        h3.textContent = alumni.name;
 
         // For each restaurant, create an paragraph and set the text content to the restaurant's description
         const p = card.getElementsByTagName("P")[0];
-        p.textContent = `${restaurant.Bio.substring(0, 240)}`; // Limit to 240 chars
+        p.textContent = `${alumni.bio.substring(0, 240)}`; // Limit to 240 chars
 
         // Place the card into the div "Cards-Container"
 
@@ -68,5 +68,5 @@ function getRestaurants() {
 
 // This fires all of the defined functions when the document is "ready" or loaded
 (function () {
-  getRestaurants();
+  getAlumnis();
 })();
