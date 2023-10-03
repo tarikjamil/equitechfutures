@@ -77,3 +77,38 @@ function getAlumnis() {
 (function () {
   getAlumnis();
 })();
+
+// ... [Your previous code remains unchanged]
+
+function getAlumnis(filter = "") {
+  // ... [All previous codes in getAlumnis remain unchanged]
+
+  request.onload = function () {
+    // ...
+    if (request.status >= 200 && request.status < 400) {
+      // ...
+      // Filter data based on input
+      const filteredData = data.filter((alumni) => {
+        return alumni.name.includes(filter);
+      });
+
+      // Use filteredData instead of data in the loop
+      filteredData.forEach((alumni) => {
+        // ...
+      });
+    }
+  };
+
+  // ...
+}
+
+// Event listener for the search input
+document.querySelector(".Search").addEventListener("input", (event) => {
+  const searchTerm = event.target.value;
+  // Clear the cardContainer
+  document.getElementById("Cards-Container").innerHTML = "";
+  // Call the function with the search term
+  getAlumnis(searchTerm);
+});
+
+// ...
