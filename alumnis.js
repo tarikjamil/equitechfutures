@@ -48,8 +48,8 @@ function getAlumnis() {
         img.src = alumni.image.url + "?tpl=big:box"; // using Xano's template engine to re-size the pictures down and make them a box
 
         // For each restaurant, create an h3 and set the text content to the restaurant's title
-        const h3 = card.getElementsByTagName("H3")[0];
-        h3.textContent = alumni.name;
+        const h2 = card.getElementsByTagName("H2")[0];
+        h2.textContent = alumni.name;
 
         // For each restaurant, create an paragraph and set the text content to the restaurant's description
         const p = card.getElementsByTagName("P")[0];
