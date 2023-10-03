@@ -1,5 +1,5 @@
 // Create a variable for the API endpoint. In this example, we're accessing Xano's API
-let xanoUrl = new URL("https://x715-fe9c-6426.n7.xano.io/api:xrK0o8q4/");
+let xanoUrl = new URL("https://x8ki-letl-twmt.n7.xano.io/api:v0K9JRjG/");
 
 // Define a function (set of operations) to get restaurant information.
 // This will use the GET request on the URL endpoint
@@ -11,7 +11,7 @@ function getRestaurants() {
   // Define a function (set of operations) to get restaurant information.
   // Creates a variable that will take the URL from above and makes sure it displays as a string.
   // We then add the word 'restaurant" so the API endpoint becomes https://x715-fe9c-6426.n7.xano.io/api:Iw1iInWB/restaurant
-  let url = xanoUrl.toString() + "restaurant";
+  let url = xanoUrl.toString();
 
   // Remember the 'request' was defined above as the standard way to access an API in Javascript.
   // GET is the verb we're using to GET data from Xano
@@ -45,15 +45,15 @@ function getRestaurants() {
 
         // For each restaurant, Create an image and use the restaurant image coming from the API
         const img = card.getElementsByTagName("IMG")[0];
-        img.src = restaurant.banner.url + "?tpl=big:box"; // using Xano's template engine to re-size the pictures down and make them a box
+        img.src = restaurant.image + "?tpl=big:box"; // using Xano's template engine to re-size the pictures down and make them a box
 
         // For each restaurant, create an h3 and set the text content to the restaurant's title
         const h3 = card.getElementsByTagName("H3")[0];
-        h3.textContent = restaurant.name;
+        h3.textContent = restaurant.Name;
 
         // For each restaurant, create an paragraph and set the text content to the restaurant's description
         const p = card.getElementsByTagName("P")[0];
-        p.textContent = `${restaurant.description.substring(0, 240)}`; // Limit to 240 chars
+        p.textContent = `${restaurant.Bio.substring(0, 240)}`; // Limit to 240 chars
 
         // Place the card into the div "Cards-Container"
 
