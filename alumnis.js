@@ -136,3 +136,19 @@ function addOptionsToSelect(selectId, items) {
     select.appendChild(option);
   });
 }
+
+function resetFilters() {
+  // Reset input fields
+  document.getElementById("filter-name").value = "";
+  document.getElementById("filter-country").value = "";
+  document.getElementById("filter-year").value = "";
+  document.getElementById("filter-program").value = "";
+
+  // Display all member items
+  const templates = document.querySelectorAll('[w-el="memberItem"]');
+  templates.forEach((template) => {
+    template.style.display = "block";
+  });
+}
+
+document.getElementById("resetFilters").addEventListener("click", resetFilters);
