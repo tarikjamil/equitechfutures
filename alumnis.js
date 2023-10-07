@@ -104,9 +104,10 @@ function populateSelectOptions() {
     programs.add(template.querySelector('[w-el="program"]').textContent);
   });
 
-  addOptionsToSelect("filter-country", countries);
-  addOptionsToSelect("filter-year", years);
-  addOptionsToSelect("filter-program", programs);
+  // Convert the Sets to Arrays, sort them, and then pass them to addOptionsToSelect
+  addOptionsToSelect("filter-country", Array.from(countries).sort());
+  addOptionsToSelect("filter-year", Array.from(years).sort());
+  addOptionsToSelect("filter-program", Array.from(programs).sort());
 }
 
 function addOptionsToSelect(selectId, items) {
