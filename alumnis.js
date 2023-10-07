@@ -25,15 +25,15 @@ function getAlumnis() {
     // Status 200 = Success. Status 400 = Problem.  This says if it's successful and no problems, then execute
     if (request.status >= 200 && request.status < 400) {
       // Map a variable called cardContainer to the Webflow element called "Cards-Container"
-      const cardContainer = document.getElementById("Cards-Container");
+      let cardContainer = document.getElementById("Cards-Container");
 
       // This is called a For Loop. This goes through each object being passed back from the Xano API and does something.
       // Specifically, it says "For every element in Data (response from API), call each individual item restaurant"
       data.forEach((alumnis) => {
         // For each restaurant, create a div called card and style with the "Sample Card" class
-        const style = document.getElementById("samplestyle");
+        let style = document.getElementById("samplestyle");
         // Copy the card and it's style
-        const card = style.cloneNode(true);
+        let card = style.cloneNode(true);
 
         card.setAttribute("id", "");
         card.style.display = "block";
@@ -44,22 +44,22 @@ function getAlumnis() {
         });
 
         // For each restaurant, Create an image and use the restaurant image coming from the API
-        const img = card.getElementsByTagName("IMG")[0];
+        let img = card.getElementsByTagName("IMG")[0];
         img.src = alumnis.image.url + "?tpl=big:box"; //
 
-        const h2 = card.getElementsByTagName("H2")[0];
+        let h2 = card.getElementsByTagName("H2")[0];
         h2.textContent = alumnis.name;
 
-        const country = card.getElementsByClassName("country-name")[0];
+        let country = card.getElementsByClassName("country-name")[0];
         country.textContent = alumnis.country;
 
-        const year = card.getElementsByClassName("year")[0];
+        let year = card.getElementsByClassName("year")[0];
         year.textContent = alumnis.year;
 
-        const position = card.getElementsByClassName("position")[0];
+        let position = card.getElementsByClassName("position")[0];
         position.textContent = alumnis.position;
 
-        const programname = card.getElementsByClassName("program-name")[0];
+        let programname = card.getElementsByClassName("program-name")[0];
         programname.textContent = alumnis.program;
 
         // Place the card into the div "Cards-Container"
