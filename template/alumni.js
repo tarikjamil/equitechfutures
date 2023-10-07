@@ -27,7 +27,7 @@ request.onload = function () {
 
     // Create an h1 and set the text content to the film's title
     const h1 = item.getElementsByTagName("H1")[0];
-    h2.textContent = alumnis.name;
+    h2.textContent = data.name;
 
     // Create a p and set the text content to the film's description
     const p = item.getElementsByTagName("P")[0];
