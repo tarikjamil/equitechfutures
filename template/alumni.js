@@ -5,7 +5,7 @@ var myParam = myUrl.searchParams.get("id") || 1;
 // Create a request variable and assign a new XMLHttpRequest object to it.
 var request = new XMLHttpRequest();
 let xanoUrl = new URL(
-  "https://x8ki-letl-twmt.n7.xano.io/api:v0K9JRjG/alumnis/" + myParam
+  "https://x8ki-letl-twmt.n7.xano.io/api:v0K9JRjG/alumnis2/" + myParam
 );
 
 // Open a new connection, using the GET request on the URL endpoint
@@ -27,22 +27,22 @@ request.onload = function () {
 
     // Create an h1 and set the text content to the film's title
     const name = item.getElementsByClassName("title--alumni")[0];
-    name.textContent = data.name;
+    name.textContent = data.Name;
 
     const position = item.getElementsByClassName("position--alumni")[0];
-    position.textContent = data.position;
+    position.textContent = data.Title_position;
 
     const year = item.getElementsByClassName("year--alumni")[0];
-    year.textContent = data.year;
+    year.textContent = data.Year;
 
     const country = item.getElementsByClassName("country--alumni")[0];
-    country.textContent = data.country;
+    country.textContent = data.Country;
 
     const program = item.getElementsByClassName("program--alumni")[0];
-    program.textContent = data.program;
+    program.textContent = data.Programs;
 
     const bio = item.getElementsByClassName("richtext-overview")[0];
-    bio.textContent = data.bio;
+    bio.textContent = data.Bio;
 
     // Append the card to the div with "Item-Container" id
     itemContainer.appendChild(item);

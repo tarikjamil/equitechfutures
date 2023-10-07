@@ -48,19 +48,19 @@ function getAlumnis2() {
         img.src = alumnis2.image + "?tpl=big:box"; //
 
         let h2 = card.getElementsByTagName("H2")[0];
-        h2.textContent = alumnis2.name;
+        h2.textContent = alumnis2.Name;
 
         let country = card.getElementsByClassName("country-name")[0];
-        country.textContent = alumnis2.country;
+        country.textContent = alumnis2.Country;
 
         let year = card.getElementsByClassName("year")[0];
-        year.textContent = alumnis2.year;
+        year.textContent = alumnis2.Year;
 
         let position = card.getElementsByClassName("position")[0];
-        position.textContent = alumnis2.position;
+        position.textContent = alumnis2.Title_position;
 
         let programname = card.getElementsByClassName("program-name")[0];
-        programname.textContent = alumnis2.program;
+        programname.textContent = alumnis2.Programs;
 
         // Place the card into the div "Cards-Container"
 
