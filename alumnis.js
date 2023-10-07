@@ -104,9 +104,9 @@ function filterTemplates() {
 
     if (
       name.includes(filterName) &&
-      country.includes(filterCountry) &&
-      year.includes(filterYear) &&
-      program.includes(filterProgram)
+      (country === filterCountry || filterCountry === "") &&
+      (year === filterYear || filterYear === "") &&
+      (program === filterProgram || filterProgram === "")
     ) {
       template.style.display = "block";
     } else {
@@ -114,3 +114,33 @@ function filterTemplates() {
     }
   });
 }
+
+function populateSelectOptions() {
+  const templates = document.querySelectorAll('[w-el="memberItem"]');
+  const countries = new Set();
+  const years = new Set();
+  const programs = new Set();
+
+  templates.forEach((template) => {
+    countries.add(template.querySelector(".country-name").textContent);
+    years.add(template.querySelector(".year").textContent);
+    programs.add(template.querySelector('[w-el="program"]').textContent);
+  });
+
+  addOptionsToSelect("filter-country", countries);
+  addOptionsToSelect("filter-year", years);
+  addOptionsToSelect("filter-program", programs);
+}
+
+function addOptionsToSelect(selectId, items) {
+  const select = document.getElementById(selectId);
+  items.forEach((item) => {
+    const option = document.createElement("option");
+    option.value = item.toLowerCase();
+    option.textContent = item;
+    select.appendChild(option);
+  });
+}
+
+// Call the populate function when the document is fully loaded.
+document.addEventListener("DOMContentLoaded", populateSelectOptions);
