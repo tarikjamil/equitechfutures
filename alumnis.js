@@ -99,9 +99,26 @@ function populateSelectOptions() {
   const programs = new Set();
 
   templates.forEach((template) => {
-    countries.add(template.querySelector(".country-name").textContent);
-    years.add(template.querySelector(".year").textContent);
-    programs.add(template.querySelector('[w-el="program"]').textContent);
+    let countryText = template
+      .querySelector(".country-name")
+      .textContent.trim();
+    let yearText = template.querySelector(".year").textContent.trim();
+    let programText = template
+      .querySelector('[w-el="program"]')
+      .textContent.trim();
+
+    if (countryText && countryText !== "country name here") {
+      countries.add(countryText);
+    }
+    if (yearText && yearText !== "year here") {
+      years.add(yearText);
+    }
+    if (
+      programText &&
+      programText !== "This is some text inside of a div block."
+    ) {
+      programs.add(programText);
+    }
   });
 
   // Convert the Sets to Arrays, sort them, and then pass them to addOptionsToSelect
