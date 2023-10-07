@@ -26,12 +26,23 @@ request.onload = function () {
     img.src = data.image.url + "?tpl=big:box";
 
     // Create an h1 and set the text content to the film's title
-    const h1 = item.getElementsByTagName("H1")[0];
-    h2.textContent = data.name;
+    const name = item.getElementsByClassName("title--alumni")[0];
+    name.textContent = data.name;
 
-    // Create a p and set the text content to the film's description
-    const p = item.getElementsByTagName("P")[0];
-    p.textContent = `${data.description.substring(0, 240)}`; // Limit to 240 chars
+    const position = item.getElementsByClassName("position--alumni")[0];
+    position.textContent = data.position;
+
+    const year = item.getElementsByClassName("year--alumni")[0];
+    year.textContent = data.year;
+
+    const country = item.getElementsByClassName("country--alumni")[0];
+    country.textContent = data.country;
+
+    const program = item.getElementsByClassName("program--alumni")[0];
+    program.textContent = data.program;
+
+    const bio = item.getElementsByClassName("richtext-overview")[0];
+    bio.textContent = data.bio;
 
     // Append the card to the div with "Item-Container" id
     itemContainer.appendChild(item);
