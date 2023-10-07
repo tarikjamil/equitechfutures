@@ -40,7 +40,7 @@ function getAlumnis() {
 
         // When a restuarant card is clicked, navigate to the item page by passing the restaurant id
         card.addEventListener("click", function () {
-          document.location.href = "/alumnisos?id=" + alumnis.id;
+          document.location.href = "/alumnisos?id=" + alumnis.slug;
         });
 
         // For each restaurant, Create an image and use the restaurant image coming from the API
