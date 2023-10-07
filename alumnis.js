@@ -11,7 +11,7 @@ function getAlumnis() {
   // Define a function (set of operations) to get restaurant information.
   // Creates a variable that will take the URL from above and makes sure it displays as a string.
   // We then add the word 'restaurant" so the API endpoint becomes https://x715-fe9c-6426.n7.xano.io/api:Iw1iInWB/restaurant
-  let url = xanoUrl.toString() + "alumnis";
+  let url = `${xanoUrl}/alumnis`;
 
   // Remember the 'request' was defined above as the standard way to access an API in Javascript.
   // GET is the verb we're using to GET data from Xano
