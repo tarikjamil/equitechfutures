@@ -11,7 +11,7 @@ function getAlumnis() {
   // Define a function (set of operations) to get restaurant information.
   // Creates a variable that will take the URL from above and makes sure it displays as a string.
   // We then add the word 'restaurant" so the API endpoint becomes https://x715-fe9c-6426.n7.xano.io/api:Iw1iInWB/restaurant
-  let url = `${xanoUrl}/alumnis`;
+  let url = `${xanoUrl}/alumnis2`;
 
   // Remember the 'request' was defined above as the standard way to access an API in Javascript.
   // GET is the verb we're using to GET data from Xano
@@ -40,27 +40,27 @@ function getAlumnis() {
 
         // When a restuarant card is clicked, navigate to the item page by passing the restaurant id
         card.addEventListener("click", function () {
-          document.location.href = "/alumnisos?id=" + alumnis.id;
+          document.location.href = "/alumnisos?id=" + alumnis2.id;
         });
 
         // For each restaurant, Create an image and use the restaurant image coming from the API
         let img = card.getElementsByTagName("IMG")[0];
-        img.src = alumnis.image.url + "?tpl=big:box"; //
+        img.src = alumnis2.image + "?tpl=big:box"; //
 
         let h2 = card.getElementsByTagName("H2")[0];
-        h2.textContent = alumnis.name;
+        h2.textContent = alumnis2.name;
 
         let country = card.getElementsByClassName("country-name")[0];
-        country.textContent = alumnis.country;
+        country.textContent = alumnis2.country;
 
         let year = card.getElementsByClassName("year")[0];
-        year.textContent = alumnis.year;
+        year.textContent = alumnis2.year;
 
         let position = card.getElementsByClassName("position")[0];
-        position.textContent = alumnis.position;
+        position.textContent = alumnis2.position;
 
         let programname = card.getElementsByClassName("program-name")[0];
-        programname.textContent = alumnis.program;
+        programname.textContent = alumnis2.program;
 
         // Place the card into the div "Cards-Container"
 
