@@ -63,7 +63,7 @@ function getAlumnis() {
         programname.textContent = alumnis.program;
 
         let alumnislug = card.getElementsByClassName("element-collection")[0];
-        alumnislug.href = alumnis.slug;
+        alumnislug.href = `/alumni/${alumnis.slug}`;
 
         // Place the card into the div "Cards-Container"
 
