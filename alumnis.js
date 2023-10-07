@@ -3,7 +3,7 @@ let xanoUrl = new URL("https://x8ki-letl-twmt.n7.xano.io/api:v0K9JRjG");
 
 // Define a function (set of operations) to get restaurant information.
 // This will use the GET request on the URL endpoint
-function getAlumnis() {
+function getAlumnis2() {
   // Create a request variable and assign a new XMLHttpRequest object to it.
   // XMLHttpRequest is the standard way you access an API in plain Javascript.
   let request = new XMLHttpRequest();
@@ -29,7 +29,7 @@ function getAlumnis() {
 
       // This is called a For Loop. This goes through each object being passed back from the Xano API and does something.
       // Specifically, it says "For every element in Data (response from API), call each individual item restaurant"
-      data.forEach((alumnis) => {
+      data.forEach((alumnis2) => {
         // For each restaurant, create a div called card and style with the "Sample Card" class
         let style = document.getElementById("samplestyle");
         // Copy the card and it's style
@@ -75,7 +75,7 @@ function getAlumnis() {
 
 // This fires all of the defined functions when the document is "ready" or loaded
 (function () {
-  getAlumnis();
+  getAlumnis2();
 })();
 
 function filterTemplates() {
