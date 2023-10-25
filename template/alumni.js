@@ -29,9 +29,6 @@ request.onload = function () {
     const name = item.getElementsByClassName("title--alumni")[0];
     name.textContent = data.Name;
 
-    const position = item.getElementsByClassName("position--alumni")[0];
-    position.textContent = data.Title_position;
-
     const year = item.getElementsByClassName("year--alumni")[0];
     year.textContent = data.Year;
 
