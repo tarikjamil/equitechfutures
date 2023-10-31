@@ -39,7 +39,7 @@ request.onload = function () {
     program.textContent = data.Programs;
 
     const bio = item.getElementsByClassName("richtext-overview")[0];
-    bio.textContent = data.Bio;
+    bio.innerHTML = data.Bio;
 
     // Append the card to the div with "Item-Container" id
     itemContainer.appendChild(item);
