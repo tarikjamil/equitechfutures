@@ -22,8 +22,8 @@ request.onload = function () {
     // For each restaurant, create a div called card and style with the "Sample Card" class
     const item = document.getElementById("samplestyle");
 
-    const img = item.getElementsByTagName("IMG")[0];
-    img.src = data.image + "?tpl=big:box";
+    const img = card.getElementsByTagName("IMG")[0];
+    img.src = alumnis2.Picture.url;
 
     // Create an h1 and set the text content to the film's title
     const name = item.getElementsByClassName("title--alumni")[0];
