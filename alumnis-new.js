@@ -23,7 +23,7 @@ function getAlumnis2() {
         });
 
         let img = card.getElementsByTagName("IMG")[0];
-        img.src = alumnis2.Picture.url;
+        img.src = alumnis.Picture.url;
 
         let h2 = card.getElementsByTagName("H2")[0];
         h2.textContent = alumnis.Name;
@@ -32,13 +32,13 @@ function getAlumnis2() {
         country.textContent = alumnis.Country;
 
         let year = card.getElementsByClassName("year")[0];
-        year.textContent = alumnis2.Year;
+        year.textContent = alumnis.Year;
 
         let position = card.getElementsByClassName("position")[0];
-        position.textContent = alumnis2.Title_position;
+        position.textContent = alumnis.Title_position;
 
         let programname = card.getElementsByClassName("program-name")[0];
-        programname.textContent = alumnis2.Programs;
+        programname.textContent = alumnis.Programs;
 
         cardContainer.appendChild(card);
       });
