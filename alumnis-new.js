@@ -35,7 +35,7 @@ function getAlumnis2() {
         year.textContent = alumnis.Year;
 
         let programname = card.getElementsByClassName("program-name")[0];
-        programname.textContent = alumnis.Programs;
+        programname.textContent = alumnis.Program;
 
         cardContainer.appendChild(card);
       });
