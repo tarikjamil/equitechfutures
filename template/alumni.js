@@ -23,7 +23,7 @@ request.onload = function () {
     const item = document.getElementById("samplestyle");
 
     const img = item.getElementsByTagName("IMG")[0];
-    img.src = alumnis2.Picture.url;
+    img.src = alumni.Picture.url;
 
     // Create an h1 and set the text content to the film's title
     const name = item.getElementsByClassName("title--alumni")[0];
