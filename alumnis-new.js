@@ -19,17 +19,17 @@ function getAlumnis2() {
         card.style.display = "block";
 
         card.addEventListener("click", function () {
-          document.location.href = "/alumnisos?id=" + alumnis2.id;
+          document.location.href = "/alumnisos?id=" + alumnis.id;
         });
 
         let img = card.getElementsByTagName("IMG")[0];
         img.src = alumnis2.Picture.url;
 
         let h2 = card.getElementsByTagName("H2")[0];
-        h2.textContent = alumnis2.Name;
+        h2.textContent = alumnis.Name;
 
         let country = card.getElementsByClassName("country-name")[0];
-        country.textContent = alumnis2.Country;
+        country.textContent = alumnis.Country;
 
         let year = card.getElementsByClassName("year")[0];
         year.textContent = alumnis2.Year;
