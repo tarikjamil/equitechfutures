@@ -5,7 +5,7 @@ var myParam = myUrl.searchParams.get("id") || 1;
 // Create a request variable and assign a new XMLHttpRequest object to it.
 var request = new XMLHttpRequest();
 let xanoUrl = new URL(
-  "https://x8ki-letl-twmt.n7.xano.io/api:1x5nfQFj/alumni/" + myParam
+  "https://x8ki-letl-twmt.n7.xano.io/api:v0K9JRjG/alumnis2/" + myParam
 );
 
 // Open a new connection, using the GET request on the URL endpoint
@@ -23,7 +23,7 @@ request.onload = function () {
     const item = document.getElementById("samplestyle");
 
     const img = item.getElementsByTagName("IMG")[0];
-    img.src = data.Picture.url;
+    img.src = data.image + "?tpl=big:box";
 
     // Create an h1 and set the text content to the film's title
     const name = item.getElementsByClassName("title--alumni")[0];
@@ -36,7 +36,7 @@ request.onload = function () {
     country.textContent = data.Country;
 
     const program = item.getElementsByClassName("program--alumni")[0];
-    program.textContent = data.Program;
+    program.textContent = data.Programs;
 
     const bio = item.getElementsByClassName("richtext-overview")[0];
     bio.textContent = data.Bio;
