@@ -34,9 +34,6 @@ function getAlumnis2() {
         let year = card.getElementsByClassName("year")[0];
         year.textContent = alumnis.Year;
 
-        let position = card.getElementsByClassName("position")[0];
-        position.textContent = alumnis.Title_position;
-
         let programname = card.getElementsByClassName("program-name")[0];
         programname.textContent = alumnis.Programs;
 
