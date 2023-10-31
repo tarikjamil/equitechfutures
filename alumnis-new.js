@@ -2,7 +2,7 @@ let xanoUrl = new URL("https://x8ki-letl-twmt.n7.xano.io/api:1x5nfQFj");
 
 function getAlumnis2() {
   let request = new XMLHttpRequest();
-  let url = `${xanoUrl}/alumni`;
+  let url = `${xanoUrl}/alumnis`;
   request.open("GET", url, true);
 
   request.onload = function () {
