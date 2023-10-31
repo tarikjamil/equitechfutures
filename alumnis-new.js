@@ -23,7 +23,7 @@ function getAlumnis2() {
         });
 
         let img = card.getElementsByTagName("IMG")[0];
-        img.src = alumnis2.image + "?tpl=big:box";
+        img.src = alumnis2.Picture.url;
 
         let h2 = card.getElementsByTagName("H2")[0];
         h2.textContent = alumnis2.Name;
