@@ -11,7 +11,7 @@ function getAlumnis2() {
     if (request.status >= 200 && request.status < 400) {
       let cardContainer = document.getElementById("Cards-Container");
 
-      data.forEach((alumnis2) => {
+      data.forEach((alumnis) => {
         let style = document.getElementById("samplestyle");
         let card = style.cloneNode(true);
 
