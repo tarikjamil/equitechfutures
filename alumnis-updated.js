@@ -23,7 +23,7 @@ function getalumni() {
         });
 
         let img = card.getElementsByTagName("IMG")[0];
-        img.src = alumni.image + "?tpl=big:box";
+        img.src = alumni.Image + "?tpl=big:box";
 
         let h2 = card.getElementsByTagName("H2")[0];
         h2.textContent = alumni.Name;
