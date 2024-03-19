@@ -1,8 +1,8 @@
-let xanoUrl = new URL("https://x8ki-letl-twmt.n7.xano.io/api:v0K9JRjG");
+let xanoUrl = new URL("https://x8ki-letl-twmt.n7.xano.io/api:1x5nfQFj");
 
-function getAlumnis2() {
+function getalumni() {
   let request = new XMLHttpRequest();
-  let url = `${xanoUrl}/alumnis2`;
+  let url = `${xanoUrl}/alumni`;
   request.open("GET", url, true);
 
   request.onload = function () {
@@ -11,7 +11,7 @@ function getAlumnis2() {
     if (request.status >= 200 && request.status < 400) {
       let cardContainer = document.getElementById("Cards-Container");
 
-      data.forEach((alumnis2) => {
+      data.forEach((alumni) => {
         let style = document.getElementById("samplestyle");
         let card = style.cloneNode(true);
 
@@ -19,26 +19,26 @@ function getAlumnis2() {
         card.style.display = "block";
 
         card.addEventListener("click", function () {
-          document.location.href = "/alumnisos?id=" + alumnis2.id;
+          document.location.href = "/alumnisos?id=" + alumni.id;
         });
 
         let img = card.getElementsByTagName("IMG")[0];
-        img.src = alumnis2.image + "?tpl=big:box";
+        img.src = alumni.Image + "?tpl=big:box";
 
         let h2 = card.getElementsByTagName("H2")[0];
-        h2.textContent = alumnis2.Name;
+        h2.textContent = alumni.Name;
 
         let country = card.getElementsByClassName("country-name")[0];
-        country.textContent = alumnis2.Country;
+        country.textContent = alumni.Country;
 
         let year = card.getElementsByClassName("year")[0];
-        year.textContent = alumnis2.Year;
+        year.textContent = alumni.Year;
 
         let position = card.getElementsByClassName("position")[0];
-        position.textContent = alumnis2.Title_position;
+        position.textContent = alumni.Title_position;
 
         let programname = card.getElementsByClassName("program-name")[0];
-        programname.textContent = alumnis2.Programs;
+        programname.textContent = alumni.Program;
 
         cardContainer.appendChild(card);
       });
@@ -52,7 +52,7 @@ function getAlumnis2() {
 }
 
 (function () {
-  getAlumnis2();
+  getalumni();
 })();
 
 function filterTemplates() {
