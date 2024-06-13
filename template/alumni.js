@@ -5,7 +5,7 @@ var myParam = myUrl.searchParams.get("id") || 1;
 // Create a request variable and assign a new XMLHttpRequest object to it.
 var request = new XMLHttpRequest();
 let xanoUrl = new URL(
-  "https://x8ki-letl-twmt.n7.xano.io/api:v0K9JRjG/alumnis2/" + myParam
+  "https://x8ki-letl-twmt.n7.xano.io/api:1x5nfQFj" + myParam
 );
 
 // Open a new connection, using the GET request on the URL endpoint
