@@ -36,7 +36,7 @@ request.onload = function () {
     country.textContent = data.Country;
 
     const program = item.getElementsByClassName("program--alumni")[0];
-    program.textContent = data.Programs;
+    program.textContent = data.Program;
 
     const bio = item.getElementsByClassName("richtext-overview")[0];
     bio.innerHTML = data.Bio;
